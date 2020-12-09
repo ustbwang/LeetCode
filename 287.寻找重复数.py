@@ -22,18 +22,17 @@ class Solution:
         num = 0
         while start < end:
             middle = (start+end)//2
-            print(middle)
+            # print(middle)
             cc = self.findnum(nums, start, middle)
-            if cc <= middle :     # 说明在右半部分
+            if cc <= middle-start+1 :     # 说明在右半部分
                 start = middle+1
             else:                # 说明在左半部分
                 end = middle
 
-            print(start, middle, end )
         return start
             
 
 # @lc code=end
-a = Solution()
-print(a.findDuplicate([1, 2, 1]))
+# a = Solution()
+# print(a.findDuplicate([3,1,3,4,2]))
 

@@ -12,13 +12,11 @@ class Solution:
         hashmap={}
         for ind, num in enumerate(nums):
             hashmap[num] = ind    
-
-        for i, num in enumerate(nums):      # 去遍历原来的，不遍历字典
-            j = hashmap.get(target - num)
-            if j is not None and i!=j:
-                return [i,j]
+        for ind, num in enumerate(nums):
+            if target - num in hashmap and ind != hashmap[target - num]:                    
+                return [ind, hashmap[target - num]]
         
 # @lc code=end
 a = Solution()
-print(a.twoSum([3,3], 6))
+print(a.twoSum([2,7,11,15], 9))
 
